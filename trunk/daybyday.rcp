@@ -1,0 +1,33 @@
+ApplicationIconName ID 1 "Day By Day"
+Version ID 1001	"0.1"
+Application ID DayByDay "THdd"
+
+// Icons
+Icon "daybyday.bmp"
+SmallIcon "daybydaysmall.bmp"
+
+// Strings
+String ID strABOUT "DayByDay\n (C) 2005 Tomas Honzak, tomas@honzak.cz"
+
+// Forms and Alerts
+Form ID frmMAIN at (0 0 160 160)
+NoFrame
+Begin
+  Title "Day By Day"
+  Table ID tblMAIN at (8 18 152 120) Rows 10 Columns 4 ColumnWidths 30 50 60 10
+  ScrollBar ID sbtblMAIN at (Right@PrevLeft-1 PrevTop 7 PrevHeight) Value 10 Min 0 Max 100 PageSize 10
+  Button "New" AutoID at (PrevLeft 143 Auto Auto) Font 0
+  PopupTrigger "Category" ID CatListHolder at (103 0 Auto Auto) Font 0 LeftAnchor
+  PopupList CatListHolder CatList
+  LIST "Unfiled" "All" ID CatList at (PrevLeft PrevBottom+1 41 Auto) Font 0 NonUsable VisibleItems 10
+  GraffitiStateIndicator at (150 140)
+End
+
+Form ID frmREC at (0 0 160 160)
+Frame
+Begin
+	Title "Note"
+	SelectorTrigger "-*x*-" ID stDate at (8 18 30 Auto)
+	Field ID txtNote at (PrevLeft PrevBottom+1 100 152)
+  	GraffitiStateIndicator at (150 140)
+End
